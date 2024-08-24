@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+using UnityEngine.UI;
 
-public class CameraController : MonoBehaviour
+
+public class LSUIManager : MonoBehaviour
 {
-    public static CameraController instance;
+    public static LSUIManager instance;
 
-    public CinemachineBrain theCMBrain;
+    public Text lNameText;
+    public GameObject lNamePanel;
+
+    public Text coinsText;
 
     private void Awake()
     {
         instance = this;
     }
+
     // Start is called before the first frame update
     void Start()
     {

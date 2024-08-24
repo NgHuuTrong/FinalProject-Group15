@@ -1,22 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
-public class CameraController : MonoBehaviour
+public class LSBridge : MonoBehaviour
 {
-    public static CameraController instance;
+    public string levelToUnlock;
 
-    public CinemachineBrain theCMBrain;
-
-    private void Awake()
-    {
-        instance = this;
-    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(PlayerPrefs.GetInt(levelToUnlock + "_unlocked") == 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

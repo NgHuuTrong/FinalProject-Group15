@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillPlayer : MonoBehaviour
+public class LevelExit : MonoBehaviour
 {
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,9 @@ public class KillPlayer : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            GameManager.instance.Respawn();
-           
+            anim.SetTrigger("Hit");
+
+            StartCoroutine(GameManager.instance.LevelEndCo());
         }
     }
 }

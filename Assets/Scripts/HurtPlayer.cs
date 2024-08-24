@@ -1,18 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
-public class CameraController : MonoBehaviour
+public class HurtPlayer : MonoBehaviour
 {
-    public static CameraController instance;
-
-    public CinemachineBrain theCMBrain;
-
-    private void Awake()
-    {
-        instance = this;
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +14,13 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            HealthManager.instance.Hurt();
+        }
     }
 }
