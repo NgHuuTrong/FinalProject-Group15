@@ -12,7 +12,11 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
+<<<<<<< HEAD
     m_StateMachine: {fileID: 8315400423534219564}
+=======
+    m_StateMachine: {fileID: 1107476425739120640}
+>>>>>>> dev
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -22,14 +26,24 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+<<<<<<< HEAD
 --- !u!1102 &2120448884576308179
 AnimatorState:
   serializedVersion: 6
+=======
+--- !u!1102 &1102475912836933848
+AnimatorState:
+  serializedVersion: 5
+>>>>>>> dev
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: New Animation
+=======
+  m_Name: Coin_Spin
+>>>>>>> dev
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -42,15 +56,25 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 05d51fc162ddc461ca2bc3a441d70916, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 88c5fbbd1ea45a345afdf2e420c8fc81, type: 2}
+>>>>>>> dev
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+<<<<<<< HEAD
 --- !u!1107 &8315400423534219564
 AnimatorStateMachine:
   serializedVersion: 6
+=======
+--- !u!1107 &1107476425739120640
+AnimatorStateMachine:
+  serializedVersion: 5
+>>>>>>> dev
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -58,8 +82,13 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
+<<<<<<< HEAD
     m_State: {fileID: 2120448884576308179}
     m_Position: {x: 200, y: 0, z: 0}
+=======
+    m_State: {fileID: 1102475912836933848}
+    m_Position: {x: 312, y: 24, z: 0}
+>>>>>>> dev
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -69,4 +98,8 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+<<<<<<< HEAD
   m_DefaultState: {fileID: 2120448884576308179}
+=======
+  m_DefaultState: {fileID: 1102475912836933848}
+>>>>>>> dev

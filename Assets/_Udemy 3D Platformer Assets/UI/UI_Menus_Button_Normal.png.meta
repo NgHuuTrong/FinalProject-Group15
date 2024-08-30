@@ -3,7 +3,11 @@ guid: dbaa9cf322791fc4e85570cdacc2c235
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
+<<<<<<< HEAD
   serializedVersion: 13
+=======
+  serializedVersion: 9
+>>>>>>> dev
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -49,7 +53,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
+<<<<<<< HEAD
   spriteBorder: {x: 16, y: 0, z: 19, w: 0}
+=======
+  spriteBorder: {x: 21, y: 21, z: 23, w: 20}
+>>>>>>> dev
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
