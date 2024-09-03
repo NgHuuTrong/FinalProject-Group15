@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController characterController;
     public float gravityScale = 5f;
     private Camera theCam;
-    public GameObject playerModal;
+    public GameObject playerModel;
     public float rotateSpeed;
     public Animator anim;
 
@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public float knockBackLength = 0.5f;
     private float knockbackCounter;
     public Vector2 knockbackPower;
+
+    public GameObject[] playerPieces;
 
     private void Awake() {
         instance = this;
@@ -58,7 +60,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(0f, theCam.transform.rotation.eulerAngles.y, 0f);
                 Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
-                playerModal.transform.rotation = Quaternion.Slerp(playerModal.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+                playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
             }
         }
 
@@ -67,7 +69,7 @@ public class PlayerController : MonoBehaviour
             knockbackCounter -= Time.deltaTime;
 
             float yStore = moveDirection.y;
-            moveDirection = playerModal.transform.forward * -knockbackPower.x;
+            moveDirection = playerModel.transform.forward * -knockbackPower.x;
             moveDirection.y = yStore;
 
             if (characterController.isGrounded)

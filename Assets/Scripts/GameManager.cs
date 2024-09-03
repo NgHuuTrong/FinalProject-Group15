@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Vector3 respawnPosition;
+
+    public GameObject playerDeathEffect;
     private void Awake() {
         instance = this;
     }
@@ -32,12 +34,16 @@ public class GameManager : MonoBehaviour
         PlayerController.instance.gameObject.SetActive(false);
         CameraController.instance.theCMBrain.enabled = false;
         UIManager.instance.fadeToBlack = true;
+        Instantiate(playerDeathEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
+
         yield return new WaitForSeconds(1.5f);
 
         UIManager.instance.fadeFromBlack = true;
         CameraController.instance.theCMBrain.enabled = true;
         PlayerController.instance.transform.position = respawnPosition;
         PlayerController.instance.gameObject.SetActive(true);
+
+        HealthManager.instance.resetHealth();
     }
 
     public void SetSpawnPoint(Vector3 newRespawnPoint) {
