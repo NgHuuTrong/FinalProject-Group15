@@ -1545,9 +1545,13 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   characterController: {fileID: 1841546827}
   gravityScale: 5
-  playerModal: {fileID: 926885390}
+  playerModel: {fileID: 926885390}
   rotateSpeed: 5
   anim: {fileID: 1469741162}
+  isKnocking: 0
+  knockBackLength: 0.5
+  knockbackPower: {x: 0, y: 0}
+  playerPieces: []
 --- !u!4 &1841546829
 Transform:
   m_ObjectHideFlags: 0
@@ -1967,6 +1971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af311bb51ab1ce142b76e8de959285ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnPosition: {x: 0, y: 0, z: 0}
+  playerDeathEffect: {fileID: 0}
 --- !u!4 &2038772871
 Transform:
   m_ObjectHideFlags: 0

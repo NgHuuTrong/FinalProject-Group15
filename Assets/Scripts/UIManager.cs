@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,9 @@ public class UIManager : MonoBehaviour
     public Image blackScreen;
     public float fadeSpeed = 1f;
     public bool fadeToBlack, fadeFromBlack;
+    public TMP_Text healthText;
+    public TMP_Text coinText;
+    public Image healthImage;
     private void Awake() {
         instance = this;
     }

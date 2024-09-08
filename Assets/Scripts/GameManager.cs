@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Vector3 respawnPosition;
 
     public GameObject playerDeathEffect;
+    public int currentCoin;
     private void Awake() {
         instance = this;
     }
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         respawnPosition = PlayerController.instance.transform.position;
+        UIManager.instance.coinText.text = "0";
     }
 
     // Update is called once per frame
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     public void Respawn() {
         StartCoroutine(RespawnCo());
+        HealthManager.instance.PlayerKilled();
+        AudioManager.instance.PlaySFX(7);
     }
 
     private IEnumerator RespawnCo() {
@@ -43,10 +47,15 @@ public class GameManager : MonoBehaviour
         PlayerController.instance.transform.position = respawnPosition;
         PlayerController.instance.gameObject.SetActive(true);
 
-        HealthManager.instance.resetHealth();
+        HealthManager.instance.ResetHealth();
     }
 
     public void SetSpawnPoint(Vector3 newRespawnPoint) {
         respawnPosition = newRespawnPoint;
+    }
+
+    public void AddCoin(int coinsToAdd) {
+        currentCoin+=coinsToAdd;
+        UIManager.instance.coinText.text = currentCoin.ToString();
     }
 }

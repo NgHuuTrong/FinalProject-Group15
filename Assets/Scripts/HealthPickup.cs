@@ -7,6 +7,7 @@ public class HealthPickup : MonoBehaviour
     public int healAmount;
     public bool isFullMeal;
     public GameObject pickupEffect;
+    public int sfxToPlay;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +29,15 @@ public class HealthPickup : MonoBehaviour
 
             if(isFullMeal)
             {
-                HealthManager.instance.resetHealth();
+                HealthManager.instance.ResetHealth();
             }
             else
             {
                 HealthManager.instance.AddHealth(healAmount);
             }
             Instantiate(pickupEffect, transform.position, transform.rotation);
+
+            AudioManager.instance.PlaySFX(sfxToPlay);
         }
     }
 }

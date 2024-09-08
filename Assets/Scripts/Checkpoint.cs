@@ -7,6 +7,7 @@ public class Checkpoint : MonoBehaviour
 {
 
     public GameObject cpOn, cpOff;
+    public int sfxToPlay;
 
     //public Checkpoint[] cps;
 
@@ -38,6 +39,8 @@ public class Checkpoint : MonoBehaviour
 
             cpOff.SetActive(false);
             cpOn.SetActive(true);
+
+            AudioManager.instance.PlaySFX(sfxToPlay);
         }
     }
 

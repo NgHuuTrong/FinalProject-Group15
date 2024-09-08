@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cpOn: {fileID: 7382484682808625827}
   cpOff: {fileID: 7972740544390198958}
+  sfxToPlay: 4
 --- !u!135 &933708680859405899
 SphereCollider:
   m_ObjectHideFlags: 0

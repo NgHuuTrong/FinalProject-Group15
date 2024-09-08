@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class HealthManager : MonoBehaviour
     public float invicibleLength = 2f;
 
     private float invincCounter;
+    public Sprite[] healthBarImages;
+    public int hurtSFX;
 
     void Awake()
     {
@@ -23,7 +26,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        ResetHealth();
     }
 
     // Update is called once per frame
@@ -69,12 +72,18 @@ public class HealthManager : MonoBehaviour
 
                 
             }
+
+            AudioManager.instance.PlaySFX(hurtSFX);
+            UpdateUI();
         }
+
     }
 
-    public void resetHealth()
+    public void ResetHealth()
     {
         currentHealth = maxHealth;
+         UIManager.instance.healthImage.enabled = true;
+        UpdateUI();
     }
 
     public void AddHealth(int amountToHeal)
@@ -84,5 +93,20 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+        UpdateUI();
+    }
+
+    public void UpdateUI() {
+        UIManager.instance.healthText.text = currentHealth.ToString();
+
+        UIManager.instance.healthImage.sprite = healthBarImages[currentHealth];
+        if(currentHealth == 0) {
+            UIManager.instance.healthImage.enabled = false;
+        }
+    }
+
+    public void PlayerKilled() {
+        currentHealth = 0;
+        UpdateUI();
     }
 }
