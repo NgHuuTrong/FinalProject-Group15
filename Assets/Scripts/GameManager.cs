@@ -25,7 +25,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            PauseUnpause();
+        }
     }
 
     public void Respawn() {
@@ -57,5 +59,23 @@ public class GameManager : MonoBehaviour
     public void AddCoin(int coinsToAdd) {
         currentCoin+=coinsToAdd;
         UIManager.instance.coinText.text = currentCoin.ToString();
+    }
+
+    public void PauseUnpause() {
+        if(UIManager.instance.pauseScreen.activeInHierarchy) {
+            UIManager.instance.pauseScreen.SetActive(false);
+            Time.timeScale = 1f;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else {
+            UIManager.instance.pauseScreen.SetActive(true);
+            UIManager.instance.CloseOptions();
+            Time.timeScale = 0f;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
