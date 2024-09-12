@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
 
 public class UIManager : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class UIManager : MonoBehaviour
     public Image healthImage;
     public GameObject pauseScreen, optionsScreen;
     public Slider musicVolSlider, sfxVolSlider;
+
+    public string levelSelect, mainMenu;
 
     private void Awake() {
         instance = this;
@@ -57,13 +62,18 @@ public class UIManager : MonoBehaviour
         optionsScreen.SetActive(false);
     }
 
-    public void LevelSelect() {
-
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene(levelSelect);
+        Time.timeScale = 1f;
     }
 
-    public void MainMenu() {
-
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(mainMenu);
+        Time.timeScale = 1;
     }
+
 
     public void SetMusicLevel() {
         AudioManager.instance.SetMusicLevel();

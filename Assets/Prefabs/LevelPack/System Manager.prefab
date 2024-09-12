@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPosition: {x: 0, y: 0, z: 0}
   playerDeathEffect: {fileID: 1741799723410110743, guid: 2b10a5acb5a618549889a9f6d99ad288, type: 3}
+  currentCoin: 0
 --- !u!114 &1889660559974976071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,3 +63,5 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 5
   invicibleLength: 2
+  healthBarImages: []
+  hurtSFX: 0

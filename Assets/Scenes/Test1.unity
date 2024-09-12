@@ -6687,9 +6687,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1519005856}
     - target: {fileID: 7029847421539800024, guid: 68a22e713c47c6d45bc21d86ae4b49c1, type: 3}
+      propertyPath: mainMenu
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029847421539800024, guid: 68a22e713c47c6d45bc21d86ae4b49c1, type: 3}
       propertyPath: healthImage
       value: 
       objectReference: {fileID: 221090105}
+    - target: {fileID: 7029847421539800024, guid: 68a22e713c47c6d45bc21d86ae4b49c1, type: 3}
+      propertyPath: levelSelect
+      value: LevelSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 7029847421539800024, guid: 68a22e713c47c6d45bc21d86ae4b49c1, type: 3}
       propertyPath: pauseScreen
       value: 
@@ -6698,6 +6706,10 @@ PrefabInstance:
       propertyPath: sfxVolSlider
       value: 
       objectReference: {fileID: 19558327}
+    - target: {fileID: 7029847421539800024, guid: 68a22e713c47c6d45bc21d86ae4b49c1, type: 3}
+      propertyPath: fadeFromBlack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7029847421539800024, guid: 68a22e713c47c6d45bc21d86ae4b49c1, type: 3}
       propertyPath: optionsScreen
       value: 
